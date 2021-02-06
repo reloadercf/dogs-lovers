@@ -1,7 +1,7 @@
 # dogs-lover
 
 La intencion en este proyecto es poder ejercitar los objetivos de aprendizaje relacionados a:  
-[ ]Funciones 
+[ ]Funciones  
 [ ]Arrays  
 [ ]Objects  
 [ ]Dom  
