@@ -1,17 +1,12 @@
-import perritos from './data.js'
+import data from './data.js'
+import {generadorHtml} from './generadorHtml.js'
 
-let elDOM=document.getElementById("app")
+const nodoRoot=document.getElementById('root')
 
+let todoElHTML=""
 
-perritos.dogs.forEach(unperrito=>{
-    let unsolDiv=document.createElement("div")
-    unsolDiv.innerHTML=setHtml(unperrito)
-    elDOM.appendChild(unsolDiv)
+data.dogs.forEach(perrito=>{
+    todoElHTML+=generadorHtml(perrito)
 })
 
-function setHtml(unperro){
-    let html=`<img src="${unperro.image}"/>
-            <p>${unperro.breed}</p>
-                `
-    return html
-}
+nodoRoot.innerHTML=todoElHTML
