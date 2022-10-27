@@ -1,12 +1,20 @@
-import data from './data.js'
-import {generadorHtml} from './generadorHtml.js'
+import dataDogs from './data.js'
+const root = document.getElementById('root')
 
-const nodoRoot=document.getElementById('root')
+const onlyDogs = dataDogs.dogs
+console.log(onlyDogs)
 
-let todoElHTML=""
+onlyDogs.forEach (dog => {
+    const card = document.createElement('div')
+    card.className = "card" 
 
-data.dogs.forEach(perrito=>{
-    todoElHTML+=generadorHtml(perrito)
+    const images = document.createElement('img')
+    images.src = dog.image
+
+    const breed = document.createElement('h2')
+    breed.textContent = dog.breed
+
+    card.append(images, breed)
+    root.append(card)
 })
 
-nodoRoot.innerHTML=todoElHTML
